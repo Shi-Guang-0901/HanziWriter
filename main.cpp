@@ -2,8 +2,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
-#include <conio.h>
-#include <windows.h>
+//#include <conio.h>
+//#include <windows.h>
 #include "sstring.h"
 #include "utf8.h"
 #include "file.h"
@@ -12,7 +12,7 @@
 
 extern SString open_faild;
 extern SString open_exception;
-extern SString signal;
+extern SString symbol;
 
 
 void color(int x);
@@ -129,11 +129,15 @@ void color(int x)
 
 void hide_Curser()
 {
-    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+#ifdef _WIN32
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_CURSOR_INFO CursorInfo;
     GetConsoleCursorInfo(handle, &CursorInfo);//获取控制台光标信息
     CursorInfo.bVisible = 0; //隐藏控制台光标
     SetConsoleCursorInfo(handle, &CursorInfo);//设置控制台光标状态
+#elif __linux___
+    
+#endif
 }
 
 
@@ -163,8 +167,8 @@ void zi(int a[24][24])
             {
                 if(a[i][j]==n)
                 {
-                    gotoxy(j*2,i);
-                    printf("%s",signal.values);
+                    mygotoxy(j*2,i);
+                    printf("%s",symbol.values);
                 }
             }
         }

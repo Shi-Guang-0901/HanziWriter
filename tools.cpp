@@ -2,12 +2,12 @@
 
 void clear_line(int y,int cols)
 {
-    gotoxy(0, y);
+    mygotoxy(0, y);
     for (int i = 0; i < cols; i++)
     {
         printf(" ");
     }
-    gotoxy(0, y);
+    mygotoxy(0, y);
 }
 
 void clear_screen(int x,int y)
@@ -16,22 +16,22 @@ void clear_screen(int x,int y)
     {
         for(int j = 0; j< y; j++)
         {
-            gotoxy( i,j);
+            mygotoxy( i,j);
             printf(" ");
         }
     }
-    gotoxy(0,0);
+    mygotoxy(0,0);
 }
 
 void progress_bar(long long completed, long long all, int weight,int x, int y)
 {
-    gotoxy(x, y);
+    mygotoxy(x, y);
     int total = (int)((completed * 1.0 / all) * weight);
     for (int i = 0; i <= weight; i++)
     {
         printf("-");
     }
-    gotoxy(x, y);
+    mygotoxy(x, y);
     for (int i = 0; i <= total - 1; i++)
     {
         printf("-");
@@ -71,8 +71,12 @@ int getCodepage()
 
 void gotoxy(int x, int y)
 {
+    #ifdef _WIN32
     COORD c;
     c.X = x;
     c.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
+#elif __linux__
+    gotoxy(x,y);
+#endif
 }

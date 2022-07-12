@@ -1,0 +1,3 @@
+/data/data/com.termux/files/home/clang/HanziWriter/CMakeFiles/HanziWriter.dir
+/data/data/com.termux/files/home/clang/HanziWriter/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/clang/HanziWriter/CMakeFiles/rebuild_cache.dir

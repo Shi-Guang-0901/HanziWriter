@@ -1,0 +1,1 @@
+/data/data/com.termux/files/usr/bin/c++ -O2 -g -DNDEBUG CMakeFiles/HanziWriter.dir/sstring.cpp.o CMakeFiles/HanziWriter.dir/file.cpp.o CMakeFiles/HanziWriter.dir/info.cpp.o CMakeFiles/HanziWriter.dir/tools.cpp.o CMakeFiles/HanziWriter.dir/utf8.cpp.o CMakeFiles/HanziWriter.dir/main.cpp.o -o HanziWriter 
