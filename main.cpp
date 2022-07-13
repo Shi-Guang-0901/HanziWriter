@@ -2,13 +2,15 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
-//#include <conio.h>
-//#include <windows.h>
 #include "sstring.h"
 #include "utf8.h"
 #include "file.h"
 #include "info.h"
 #include "tools.h"
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 extern SString open_faild;
 extern SString open_exception;
@@ -24,19 +26,26 @@ typedef char Hanzi[4];
 
 int main()
 {
+#ifdef _WIN32
     system("mode con cols=48 lines=24");
     hide_Curser();
     srand((unsigned)time(NULL));
+#elif __linux__
+    system("clear");
+#endif
     init_string();
-    int code = getCodepage();
+    /*int code = getCodepage();
     if(code == 936)
     {
         convert_string();
-    }
+    }*/
 
     SString pre;
+#ifdef _WIN32
     create_string(&pre,".\\data\\");
-    system("echo %cd%");
+#elif __linux__
+    create_string(&pre,"./data/");
+#endif
     SString data;
     create_string(&data,"hanzi.txt");
     FILE *example=NULL,*shape=NULL;
@@ -74,10 +83,10 @@ int main()
         create_string(&hzi,hanzis[i]);
         SString filenameOfShape= {NULL,0};
         concat_string(&filenameOfShape,pre,hzi);
-        if(code == 936)
+        /*if(code == 936)
         {
             convert(&filenameOfShape,filenameOfShape,"UTF-8","GBK");
-        }
+        }*/
         if((shape=fopen(filenameOfShape.values,"rb"))==NULL)
         {
             printf("\'%s\'\n",filenameOfShape.values);
@@ -135,8 +144,8 @@ void hide_Curser()
     GetConsoleCursorInfo(handle, &CursorInfo);//获取控制台光标信息
     CursorInfo.bVisible = 0; //隐藏控制台光标
     SetConsoleCursorInfo(handle, &CursorInfo);//设置控制台光标状态
-#elif __linux___
-    
+#elif __linux__
+    printf("\033[?25l");
 #endif
 }
 
@@ -169,6 +178,7 @@ void zi(int a[24][24])
                 {
                     mygotoxy(j*2,i);
                     printf("%s",symbol.values);
+		    fflush(stdout);
                 }
             }
         }

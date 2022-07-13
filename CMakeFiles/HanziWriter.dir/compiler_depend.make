@@ -70,7 +70,7 @@ CMakeFiles/HanziWriter.dir/file.cpp.o: file.cpp \
   /data/data/com.termux/files/usr/include/c++/v1/limits \
   /data/data/com.termux/files/usr/include/c++/v1/__undef_macros \
   /data/data/com.termux/files/usr/include/memory.h \
-  /data/data/com.termux/files/usr/include/iconv.h \
+  /data/data/com.termux/files/usr/local/include/iconv.h \
   /data/data/com.termux/files/usr/include/c++/v1/errno.h \
   /data/data/com.termux/files/usr/include/errno.h \
   /data/data/com.termux/files/usr/include/linux/errno.h \
@@ -170,7 +170,7 @@ CMakeFiles/HanziWriter.dir/info.cpp.o: info.cpp \
   /data/data/com.termux/files/usr/include/c++/v1/limits \
   /data/data/com.termux/files/usr/include/c++/v1/__undef_macros \
   /data/data/com.termux/files/usr/include/memory.h \
-  /data/data/com.termux/files/usr/include/iconv.h \
+  /data/data/com.termux/files/usr/local/include/iconv.h \
   /data/data/com.termux/files/usr/include/c++/v1/errno.h \
   /data/data/com.termux/files/usr/include/errno.h \
   /data/data/com.termux/files/usr/include/linux/errno.h \
@@ -296,7 +296,7 @@ CMakeFiles/HanziWriter.dir/main.cpp.o: main.cpp \
   /data/data/com.termux/files/usr/include/sys/time.h \
   sstring.h \
   /data/data/com.termux/files/usr/include/memory.h \
-  /data/data/com.termux/files/usr/include/iconv.h \
+  /data/data/com.termux/files/usr/local/include/iconv.h \
   /data/data/com.termux/files/usr/include/c++/v1/errno.h \
   /data/data/com.termux/files/usr/include/errno.h \
   /data/data/com.termux/files/usr/include/linux/errno.h \
@@ -381,7 +381,7 @@ CMakeFiles/HanziWriter.dir/sstring.cpp.o: sstring.cpp \
   /data/data/com.termux/files/usr/include/c++/v1/limits \
   /data/data/com.termux/files/usr/include/c++/v1/__undef_macros \
   /data/data/com.termux/files/usr/include/memory.h \
-  /data/data/com.termux/files/usr/include/iconv.h \
+  /data/data/com.termux/files/usr/local/include/iconv.h \
   /data/data/com.termux/files/usr/include/c++/v1/errno.h \
   /data/data/com.termux/files/usr/include/errno.h \
   /data/data/com.termux/files/usr/include/linux/errno.h \
@@ -481,7 +481,7 @@ CMakeFiles/HanziWriter.dir/tools.cpp.o: tools.cpp \
   /data/data/com.termux/files/usr/include/c++/v1/limits \
   /data/data/com.termux/files/usr/include/c++/v1/__undef_macros \
   /data/data/com.termux/files/usr/include/memory.h \
-  /data/data/com.termux/files/usr/include/iconv.h \
+  /data/data/com.termux/files/usr/local/include/iconv.h \
   /data/data/com.termux/files/usr/include/c++/v1/errno.h \
   /data/data/com.termux/files/usr/include/errno.h \
   /data/data/com.termux/files/usr/include/linux/errno.h \
@@ -629,6 +629,10 @@ main.cpp:
 
 /data/data/com.termux/files/usr/include/linux/errno.h:
 
+/data/data/com.termux/files/usr/include/linux/types.h:
+
+/data/data/com.termux/files/usr/local/include/iconv.h:
+
 /data/data/com.termux/files/usr/include/android/ndk-version.h:
 
 /data/data/com.termux/files/usr/include/c++/v1/limits:
@@ -646,8 +650,6 @@ main.cpp:
 /data/data/com.termux/files/usr/include/bits/timespec.h:
 
 /data/data/com.termux/files/usr/include/errno.h:
-
-/data/data/com.termux/files/usr/include/iconv.h:
 
 /data/data/com.termux/files/usr/include/c++/v1/float.h:
 
@@ -774,8 +776,6 @@ file.cpp:
 /data/data/com.termux/files/usr/include/bits/get_device_api_level_inlines.h:
 
 /data/data/com.termux/files/usr/include/memory.h:
-
-/data/data/com.termux/files/usr/include/linux/types.h:
 
 /data/data/com.termux/files/usr/include/pthread.h:
 

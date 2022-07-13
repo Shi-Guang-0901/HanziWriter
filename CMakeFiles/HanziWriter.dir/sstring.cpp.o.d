@@ -66,7 +66,7 @@ CMakeFiles/HanziWriter.dir/sstring.cpp.o: \
   /data/data/com.termux/files/usr/include/c++/v1/limits \
   /data/data/com.termux/files/usr/include/c++/v1/__undef_macros \
   /data/data/com.termux/files/usr/include/memory.h \
-  /data/data/com.termux/files/usr/include/iconv.h \
+  /data/data/com.termux/files/usr/local/include/iconv.h \
   /data/data/com.termux/files/usr/include/c++/v1/errno.h \
   /data/data/com.termux/files/usr/include/errno.h \
   /data/data/com.termux/files/usr/include/linux/errno.h \

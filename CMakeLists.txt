@@ -7,5 +7,5 @@ add_executable(HanziWriter sstring.h sstring.cpp file.h file.cpp info.h info.cpp
 
 
 
-# TARGET_LINK_LIBRARIES(${PROJECT_NAME} libiconv.a)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} libiconv.so)
 

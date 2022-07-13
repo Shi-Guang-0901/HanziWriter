@@ -69,7 +69,7 @@ int getCodepage()
     return codepage;
 }
 
-void gotoxy(int x, int y)
+void mygotoxy(int x, int y)
 {
     #ifdef _WIN32
     COORD c;
@@ -77,6 +77,6 @@ void gotoxy(int x, int y)
     c.Y = y;
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 #elif __linux__
-    gotoxy(x,y);
+    printf("%c[%d;%df",0x1B,y,x);    
 #endif
 }
