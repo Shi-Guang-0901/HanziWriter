@@ -61,7 +61,7 @@ int main()
     long file_length = fileLength(example);
     uchar *text = createStr(example);
     int sumOfLetter = letterTotal(text,file_length);
-
+     
     if((file_length%3!=0)&&(file_length/3)!=sumOfLetter)
     {
         print_string(open_exception);
