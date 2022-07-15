@@ -1,6 +1,6 @@
 # 项目排除路径
-/cmake-build-debug/*
-/CMakeFiles/*
+/cmake-build-debug/
+/CMakeFiles/
 
 # 项目排除文件
-
+CMakeCache.txt
