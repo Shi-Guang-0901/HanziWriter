@@ -2,7 +2,6 @@
 /cmake-build-debug/
 /CMakeFiles/
 .idea
-.
 
 # 项目排除文件
 CMakeCache.txt
