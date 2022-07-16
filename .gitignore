@@ -5,3 +5,4 @@
 
 # 项目排除文件
 CMakeCache.txt
+resource/HanziWriter

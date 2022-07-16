@@ -10,17 +10,23 @@ void clear_line(int y,int cols)
     mygotoxy(0, y);
 }
 
-void clear_screen(int x,int y)
+
+void clear_screen(int rows,int lines)
 {
-    for(int i = 0; i< x; i++)
+    clear_screen(0,0,rows,lines);
+}
+
+void clear_screen(int x, int y,int rows,int lines)
+{
+    for(int i = x; i< rows; i++)
     {
-        for(int j = 0; j< y; j++)
+        for(int j = y; j< lines; j++)
         {
             mygotoxy( i,j);
             printf(" ");
         }
     }
-    mygotoxy(0,0);
+    mygotoxy(x,y);
 }
 
 void progress_bar(long long completed, long long all, int weight,int x, int y)
@@ -78,5 +84,47 @@ void mygotoxy(int x, int y)
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 #elif __linux__
     printf("%c[%d;%df",0x1B,y,x);    
+#endif
+}
+
+void color(int x)
+{
+    switch (x)
+    {
+        case 1:
+            printf("\e[31;49m");
+            break;                      // 红色
+        case 2:
+            printf("\e[32;49m");
+            break;                      // 绿色
+        case 3:
+            printf("\e[33;49m");
+            break;                      // 黄色
+        case 4:
+            printf("\e[34;49m");
+            break;                      // 蓝色
+        case 5:
+            printf("\e[35;49m");
+            break;                      // 紫色
+        case 6:
+            printf("\e[36;49m");
+            break;                      // 青色
+        case 0:
+            printf("\e[0;0m");
+            break;
+            // 默认
+    }
+}
+
+void hide_Curser()
+{
+#ifdef _WIN32
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO CursorInfo;
+    GetConsoleCursorInfo(handle, &CursorInfo);//获取控制台光标信息
+    CursorInfo.bVisible = 0; //隐藏控制台光标
+    SetConsoleCursorInfo(handle, &CursorInfo);//设置控制台光标状态
+#elif __linux__
+    printf("\033[?25l");
 #endif
 }

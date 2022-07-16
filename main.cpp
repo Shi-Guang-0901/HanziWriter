@@ -7,6 +7,7 @@
 #include "file.h"
 #include "info.h"
 #include "tools.h"
+#include "hanzi.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -17,11 +18,10 @@ extern SString open_exception;
 extern SString symbol;
 
 
-void color(int x);
-void zi(int ma[24][24]);
+
 void hide_Curser();
 
-typedef int HANZI[24][24];
+
 typedef char Hanzi[4];
 
 int main()
@@ -95,7 +95,7 @@ int main()
         }
         fread(shapeOfHanzi,sizeof(HANZI),1,shape);
 
-        zi(shapeOfHanzi);
+        zi(shapeOfHanzi,symbol);
         clear_screen(48,24);
 
 
@@ -104,76 +104,5 @@ int main()
         fclose(shape);
     }
     return 0;
-}
-
-void color(int x)
-{
-    switch (x)
-    {
-        case 1:
-            printf("\e[31;49m");
-            break;                      // 红色
-        case 2:
-            printf("\e[32;49m");
-            break;                      // 绿色
-        case 3:
-            printf("\e[33;49m");
-            break;                      // 琥珀色
-        case 4:
-            printf("\e[34;49m");
-            break;                      // 蓝色
-        case 5:
-            printf("\e[35;49m");
-            break;                      // 紫色
-        case 6:
-            printf("\e[36;49m");
-            break;                      // 青色
-        case 0:
-            printf("\e[0;0m");
-            break;
-            // 默认
-    }
-}
-
-
-void hide_Curser()
-{
-#ifdef _WIN32
-	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_CURSOR_INFO CursorInfo;
-    GetConsoleCursorInfo(handle, &CursorInfo);//获取控制台光标信息
-    CursorInfo.bVisible = 0; //隐藏控制台光标
-    SetConsoleCursorInfo(handle, &CursorInfo);//设置控制台光标状态
-#elif __linux__
-    printf("\033[?25l");
-#endif
-}
-
-
-
-void zi(int a[24][24])
-{
-    int max=a[0][0];
-    int sleeptime = 2000 / max;
-
-    int i,j;
-    int n=0;
-    while(n<=max)
-    {
-        n++;
-        for(i=1; i<24; i++)
-        {
-            for(j=1; j<24; j++)
-            {
-                if(a[i][j]==n)
-                {
-                    mygotoxy(j*2,i);
-                    printf("%s",symbol.values);
-		    fflush(stdout);
-                }
-            }
-        }
-        usleep(sleeptime*1000);
-    }
 }
 
