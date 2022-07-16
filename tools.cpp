@@ -29,11 +29,11 @@ void clear_screen(int x, int y,int rows,int lines)
     mygotoxy(x,y);
 }
 
-void progress_bar(long long completed, long long all, int weight,int x, int y)
+void progress_bar(long long completed, long long all, int width, int x, int y)
 {
     mygotoxy(x, y);
-    int total = (int)((completed * 1.0 / all) * weight);
-    for (int i = 0; i <= weight; i++)
+    int total = (int)((completed * 1.0 / all) * width);
+    for (int i = 0; i <= width; i++)
     {
         printf("-");
     }
@@ -43,7 +43,7 @@ void progress_bar(long long completed, long long all, int weight,int x, int y)
         printf("-");
     }
     printf(">");
-    clear_line(3,weight);
+    clear_line(3, width);
     printf("already completed %.2lf%%", (completed * 1.0 / all) * 100);
 }
 

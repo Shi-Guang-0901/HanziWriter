@@ -13,10 +13,11 @@
  * 进度条
  * @param completed 已完成的
  * @param all  一共需要完成的
+ * @param width 进度条的宽度
  * @param x 位置-横坐标
  * @param y 位置-纵坐标
  */
-void progress_bar(long long completed, long long all, int x, int y);
+void progress_bar(long long completed, long long all, int width, int x, int y);
 
 /**
  * 清除屏幕上第y行cols列的内容
