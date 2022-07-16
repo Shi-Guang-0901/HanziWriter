@@ -154,16 +154,7 @@ void hide_Curser()
 void zi(int a[24][24])
 {
     int max=a[0][0];
-    int sleeptime = 0;
-
-    if(max>80)
-    {
-        sleeptime = max*400;
-    }
-    else
-    {
-        sleeptime = max*500;
-    }
+    int sleeptime = 2000 / max;
 
     int i,j;
     int n=0;
@@ -182,7 +173,7 @@ void zi(int a[24][24])
                 }
             }
         }
-        usleep(sleeptime);
+        usleep(sleeptime*1000);
     }
 }
 
