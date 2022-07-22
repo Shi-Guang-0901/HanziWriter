@@ -130,7 +130,11 @@ int get_integrated_filename(SString *dest, const SString path, const SString fil
 {
     SString space = {NULL, 0}, backslash = {NULL, 0}, tempPath = {NULL, 0};
     create_string(&space, " ");
+#ifdef _WIN32
     create_string(&backslash, "\\");
+#elif __linux__
+	create_string(&backslash, "/");
+#endif
     create_string(&tempPath, path);
     if (ends(tempPath, space) || ends(tempPath, backslash))
     {

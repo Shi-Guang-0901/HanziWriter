@@ -153,6 +153,30 @@ file.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HanziWriter.dir/build.make CMakeFiles/HanziWriter.dir/file.cpp.s
 .PHONY : file.cpp.s
 
+hanzi.o: hanzi.cpp.o
+.PHONY : hanzi.o
+
+# target to build an object file
+hanzi.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HanziWriter.dir/build.make CMakeFiles/HanziWriter.dir/hanzi.cpp.o
+.PHONY : hanzi.cpp.o
+
+hanzi.i: hanzi.cpp.i
+.PHONY : hanzi.i
+
+# target to preprocess a source file
+hanzi.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HanziWriter.dir/build.make CMakeFiles/HanziWriter.dir/hanzi.cpp.i
+.PHONY : hanzi.cpp.i
+
+hanzi.s: hanzi.cpp.s
+.PHONY : hanzi.s
+
+# target to generate assembly for a file
+hanzi.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HanziWriter.dir/build.make CMakeFiles/HanziWriter.dir/hanzi.cpp.s
+.PHONY : hanzi.cpp.s
+
 info.o: info.cpp.o
 .PHONY : info.o
 
@@ -285,6 +309,9 @@ help:
 	@echo "... file.o"
 	@echo "... file.i"
 	@echo "... file.s"
+	@echo "... hanzi.o"
+	@echo "... hanzi.i"
+	@echo "... hanzi.s"
 	@echo "... info.o"
 	@echo "... info.i"
 	@echo "... info.s"
